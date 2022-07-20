@@ -13,7 +13,7 @@ from pydub import AudioSegment
 from pytube import Channel
 from pytube import Playlist
 from pytube import YouTube
-downloadFolder = os.path.expanduser("~")+'/mnt/srv-nas/music/A-Downloaded_mix/'						#Windows example savepath = r'c:\\files\\blabla\\'
+downloadFolder = os.path.expanduser("~")+'/home/youtube2mp3/'						#Windows example savepath = r'c:\\files\\blabla\\'
 artist = ''
 album = ''
 def enterPlaylists():																				#Insert all playlists to download. Builds the playlist list and then calls for getPlaylist(playlist_url) for each element string in list
