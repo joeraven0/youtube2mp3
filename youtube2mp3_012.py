@@ -21,9 +21,10 @@ def enterPlaylists():											#Insert all playlists to download. Builds the pl
 	list_of_playlists=[]
 	inputmethod = 0
 	a = '0'
-	while (inputmethod!='1') and (inputmethod!='2'):			#Select how to input playlist string, manual with terminal or by reading links from textfile
-		print("1. Read from terminal")
-		print("2. Read from file")
+	while (inputmethod!='1') and (inputmethod!='2') and (inputmethod!='3'):			#Select how to input playlist string, manual with terminal or by reading links from textfile
+		print("1. Read playlist from terminal")
+		print("2. Read playlist from file")
+		print("3. Single song")
 		inputmethod = input("Read method: ")
 	counter = 0													#for iterating through lines in file
 	while run == 1:
@@ -37,7 +38,10 @@ def enterPlaylists():											#Insert all playlists to download. Builds the pl
 			links = filecontent.split('\n')						#split playlist links to multiple arrays
 			linkfile.close()
 			a = links[counter]									#a is the variables that currently shall download
-		if (a!='o') and (len(a)>10):
+		if inputmethod=='3':
+			a = input("Enter video url: ")
+			download('','',a,'')
+		if (a!='o') and (len(a)>10) and (inputmethod!='3'):
 			try:				
 				artist = YouTube(a).author
 				album = Playlist(a).title
@@ -45,7 +49,7 @@ def enterPlaylists():											#Insert all playlists to download. Builds the pl
 				print('Added artist: '+artist + ' - '+album)
 			except:
 				print('Except: Really a playlist link?')
-		if (counter>=len(links)-1) and (inputmethod=='2'):a='o'					#Manual input confirms with letter o, automated file search does it here
+		if (counter>=len(links)-1) and (inputmethod=='2'):a='o'	#Manual input confirms with letter o, automated file search does it here
 		if a == 'o':
 																#print(list_of_playlists)
 			run=0
@@ -89,7 +93,7 @@ def download(artist,album,url,songnumber):						#magic happens, download the son
 		filenamearray=string_filepath.split('/')
 		filename = filenamearray[-1].split('.')
 		filename[-1] = '.mp3'
-		filename[0] = str(songnumber).zfill(2) + " - " + filename[0]
+		if songnumber!='':filename[0] = str(songnumber).zfill(2) + " - " + filename[0]
 		filenamearray[-1] = ''.join(filename)
 		string_filepath_mp3 = '/'.join(filenamearray)
 		string_filepath_files.append(string_filepath)
