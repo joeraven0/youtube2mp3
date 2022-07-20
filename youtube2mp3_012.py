@@ -45,7 +45,7 @@ def enterPlaylists():											#Insert all playlists to download. Builds the pl
 				print('Added artist: '+artist + ' - '+album)
 			except:
 				print('Except: Really a playlist link?')
-		if counter>=len(links)-1:a='o'							#Manual input confirms with letter o, automated file search does it here
+		if (counter>=len(links)-1) and (inputmethod=='2'):a='o'					#Manual input confirms with letter o, automated file search does it here
 		if a == 'o':
 																#print(list_of_playlists)
 			run=0
