@@ -27,6 +27,7 @@ def enterPlaylists():																				#Insert all playlists to download. Buil
 		inputmethod = input("Read method: ")
 	counter = 0																						#for iterating through lines in file
 	while run == 1:
+		links = []
 		if inputmethod=='1':																		#read from terminal input
 			a = input("Add playlist - (o)k: ")
 		if inputmethod=='2':																		#read from file
