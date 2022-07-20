@@ -1,14 +1,20 @@
 # youtube2mp3 0.1.2
 
-## Files
+## About
+
+Download complete playlist from youtube and convert downloaded webm to mp3 - for winamp compability ;)
+
 * youtube2mp3_012.py - Run me with python3
 * linksfile.txt - Add link to all the playlists to download, separated with newline.
-
-Download complete playlist from youtube and convert downloaded webm to mp3 since winamp can't run webm.
 
 Ofc read youtube license agreement before use.
 
 Written in Python [3.10.5]
+
+## Compability
+
+Currently only working on linux. To run on windows, save paths need to be set to r'c:\\filepath\\'.
+
 ## Changelog
 Added feature to use linkfile.txt
 
