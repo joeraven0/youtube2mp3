@@ -5,17 +5,19 @@
 * linksfile.txt - Add link to all the playlists to download, separated with newline.
 
 Download complete playlist from youtube and convert downloaded webm to mp3 since winamp can't run webm.
+
 Ofc read youtube license agreement before use.
 
 Written in Python [3.10.5]
 ## Changelog
 Added feature to use linkfile.txt
+
 Fixed something I forgot, but Pytube works again...
 
 
 
 
-#Requirements
+## Requirements
 * pip install pytube, pydub and re.
 * ffmpeg.exe ffplay.exe ffprobe.exe from https://www.gyan.dev/ffmpeg/builds/
 
