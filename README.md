@@ -1,4 +1,4 @@
-# Youtube2MP3 0.1.2
+# youtube2MP3 0.1.2
 
 ## Files
 * youtube2mp3_12.py - Run me with python3
